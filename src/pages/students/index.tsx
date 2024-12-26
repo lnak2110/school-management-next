@@ -29,10 +29,8 @@ export const getServerSideProps = (async (context) => {
     return { props: { students } };
   } catch (err) {
     if (axios.isAxiosError(err)) {
-      // alert(err.response?.data.devMessage || "An error occurred");
       return { props: { students: [] } };
     } else {
-      // alert("An error occurred");
       return { notFound: true };
     }
   }

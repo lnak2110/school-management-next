@@ -26,7 +26,7 @@ export const getServerSideProps = (async (context) => {
   } catch (err) {
     if (axios.isAxiosError(err)) {
       alert(err.response?.data.devMessage || "An error occurred");
-      return { props: { classes: [] }, notFound: true };
+      return { props: { classes: [] } };
     } else {
       alert("An error occurred");
       return { notFound: true };
