@@ -8,5 +8,5 @@ export type StudentType = {
   id: number;
   name: string;
   classId: number;
-  className: string;
+  class: ClassType;
 };
