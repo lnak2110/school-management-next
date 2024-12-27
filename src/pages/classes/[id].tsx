@@ -136,7 +136,7 @@ export default function ClassDetail({ classData }: { classData: ClassType }) {
                 type="number"
                 name="studentsCount"
                 id="studentsCount"
-                value={classData.studentsCount}
+                value={classData.students.length}
                 required
                 readOnly
                 disabled

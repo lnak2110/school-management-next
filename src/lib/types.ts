@@ -1,6 +1,7 @@
 export type ClassType = {
   id: number;
   name: string;
+  students: StudentType[];
   studentsCount: number;
 };
 
