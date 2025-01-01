@@ -11,8 +11,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let paths = [];
   try {
     const res = await axiosInstance.get("/students");
-    const students = res.data.data;
-    paths = students.map((s: StudentType) => ({
+    const students = res.data?.data;
+    paths = students?.map((s: StudentType) => ({
       params: { id: s.id.toString() },
     }));
   } catch (err) {
@@ -32,9 +32,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const res = await axiosInstance.get(`/students/${id}`);
-    studentData = res.data.data;
+    studentData = res.data?.data;
     const resClasses = await axiosInstance.get("/classes");
-    classes = resClasses.data.data;
+    classes = resClasses.data?.data;
   } catch (err) {
     if (axios.isAxiosError(err)) {
       console.log(err.response?.data.devMessage || "An error occurred");
@@ -144,7 +144,7 @@ export default function StudentDetail({
               />
             </div>
             <ClassSelect
-              options={classes.map((c) => ({ value: c.id, label: c.name }))}
+              options={classes?.map((c) => ({ value: c.id, label: c.name }))}
               classIdRef={classIdRef}
               defaultValue={studentData.classId}
             />

@@ -45,7 +45,7 @@ export default function CreateStudentForm({
               />
             </div>
             <ClassSelect
-              options={classes.map((c) => ({ value: c.id, label: c.name }))}
+              options={classes?.map((c) => ({ value: c.id, label: c.name }))}
               classIdRef={classIdRef}
             />
             <button

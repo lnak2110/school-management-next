@@ -10,8 +10,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let paths = [];
   try {
     const res = await axiosInstance.get("/classes");
-    const classes = res.data.data;
-    paths = classes.map((c: ClassType) => ({
+    const classes = res.data?.data;
+    paths = classes?.map((c: ClassType) => ({
       params: { id: c.id.toString() },
     }));
   } catch (err) {
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const res = await axiosInstance.get(`/classes/${id}`);
-    classData = res.data.data;
+    classData = res.data?.data;
   } catch (err) {
     if (axios.isAxiosError(err)) {
       console.log(err.response?.data.devMessage || "An error occurred");

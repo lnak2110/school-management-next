@@ -41,7 +41,7 @@ export default function ClassSelect({
           defaultValue={defaultValue}
           className="w-full appearance-none rounded-lg border bg-white px-3 py-2 text-sm text-gray-600 shadow-sm outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
         >
-          {options.map((option) => (
+          {options?.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>

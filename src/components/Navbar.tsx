@@ -79,7 +79,7 @@ export default function Navbar() {
           }`}
         >
           <ul className="items-center justify-end space-y-6 md:flex md:space-x-6 md:space-y-0">
-            {navigation.map((item, idx) => {
+            {navigation?.map((item, idx) => {
               return (
                 <li
                   key={idx}

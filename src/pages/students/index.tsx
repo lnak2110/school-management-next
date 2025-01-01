@@ -18,8 +18,7 @@ export const getServerSideProps = (async (context) => {
         res = await axiosInstance.get("/students/name", {
           params: { keyword: name },
         });
-      }
-      if (searchby === "class") {
+      } else if (searchby === "class") {
         res = await axiosInstance.get(`/students/class/${name}`);
       }
     } else {

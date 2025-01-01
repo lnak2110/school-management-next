@@ -39,16 +39,10 @@ export default function CreateStudent() {
   }
 
   useEffect(() => {
-    if (formSubmitted) {
-      setFormSubmitted(false);
-    }
-  }, [formSubmitted]);
-
-  useEffect(() => {
     (async () => {
       try {
         const res = await axiosInstance.get("/classes");
-        setClasses(res.data.data);
+        setClasses(res.data?.data);
       } catch (err) {
         if (axios.isAxiosError(err)) {
           alert(err.response?.data.devMessage || "An error occurred");

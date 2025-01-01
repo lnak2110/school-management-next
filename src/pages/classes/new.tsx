@@ -33,12 +33,6 @@ export default function CreateClass() {
     }
   }
 
-  // useEffect(() => {
-  //   if (formSubmitted) {
-  //     setFormSubmitted(false);
-  //   }
-  // }, [formSubmitted]);
-
   return (
     <CreateClassForm
       nameRef={nameRef}

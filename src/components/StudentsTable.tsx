@@ -23,7 +23,7 @@ export default function StudentsTable({
           </tr>
         </thead>
         <tbody className="divide-y text-gray-600">
-          {students.map((item) => (
+          {students?.map((item) => (
             <tr key={item.id}>
               <td className="whitespace-nowrap px-6 py-4">{item.name}</td>
               <td className="whitespace-nowrap px-6 py-4">{item.class.name}</td>
